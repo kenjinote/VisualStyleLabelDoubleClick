@@ -6,11 +6,10 @@ WCHAR szClassName[] = L"Window";
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-	static HWND hStatic;
 	switch (msg)
 	{
 	case WM_CREATE:
-		hStatic = CreateWindow(L"STATIC", L"sample text", WS_VISIBLE | WS_CHILD | SS_NOTIFY, 0, 0, 256, 32, hWnd, 0, ((LPCREATESTRUCT)lParam)->hInstance, 0);
+		CreateWindow(L"STATIC", L"sample text", WS_VISIBLE | WS_CHILD | SS_NOTIFY, 0, 0, 256, 32, hWnd, 0, ((LPCREATESTRUCT)lParam)->hInstance, 0);
 		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);
